@@ -4,6 +4,8 @@
 
 ## [Unreleased]
 
+### Breaking changes
+- Switch to 8px baseline grid. [[#395](https://github.com/inuitcss/inuitcss/issues/395)]
 
 ### Fixes
 - Fix `o-ratio--img-contain` selector and centering. [[#304](https://github.com/inuitcss/inuitcss/issues/304)]
