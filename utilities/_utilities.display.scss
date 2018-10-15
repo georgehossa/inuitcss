@@ -1,0 +1,24 @@
+/* ==========================================================================
+   #DISPLAY
+   ========================================================================== */
+
+$inuit-display-responsive: true !default;
+
+
+@mixin _inuit-build-display($breakpoint: null) {
+  .u-block#{$breakpoint} { display: block; }
+  .u-hidden#{$breakpoint} { display: none; }
+  .u-inline#{$breakpoint} { display: inline; }
+  .u-inline-block#{$breakpoint} { display: inline-block; }
+}
+
+
+@include _inuit-build-display();
+
+@if ($inuit-display-responsive) {
+  @each $bp-name, $bp-value in $mq-breakpoints {
+    @include mq($from: $bp-name) {
+      @include _inuit-build-display(\@#{$bp-name});
+    }
+  }
+}

@@ -1,0 +1,57 @@
+/* ==========================================================================
+   #MARGIN
+   ========================================================================== */
+
+$inuit-margin-values: (
+  0: 0,
+  'tiny': $inuit-global-spacing-unit-tiny,
+  'small': $inuit-global-spacing-unit-small,
+  null: $inuit-global-spacing-unit,
+  'large': $inuit-global-spacing-unit-large,
+  'huge': $inuit-global-spacing-unit-huge,
+  'auto': 'auto'
+) !default;
+
+$inuit-margin-responsive: true !default;
+
+
+@mixin _inuit-build-margin($breakpoint: null) {
+  @each $name, $value in $inuit-margin-values {
+
+    .u-m#{$name}#{$breakpoint},
+    .u-mv#{$name}#{$breakpoint},
+    .u-mt#{$name}#{$breakpoint} {
+      margin-top: #{$value};
+    }
+
+    .u-m#{$name}#{$breakpoint},
+    .u-mv#{$name}#{$breakpoint},
+    .u-mb#{$name}#{$breakpoint} {
+      margin-bottom: #{$value};
+    }
+
+    .u-m#{$name}#{$breakpoint},
+    .u-mh#{$name}#{$breakpoint},
+    .u-ml#{$name}#{$breakpoint} {
+      margin-left: #{$value};
+    }
+
+    .u-m#{$name}#{$breakpoint},
+    .u-mh#{$name}#{$breakpoint},
+    .u-mr#{$name}#{$breakpoint} {
+      margin-right: #{$value};
+    }
+
+  }
+}
+
+
+@include _inuit-build-margin();
+
+@if ($inuit-margin-responsive) {
+  @each $bp-name, $bp-value in $mq-breakpoints {
+    @include mq($from: $bp-name) {
+      @include _inuit-build-margin(\@#{$bp-name});
+    }
+  }
+}
