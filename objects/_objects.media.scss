@@ -1,24 +1,21 @@
 /* ==========================================================================
-   #FLAG
+   #MEDIA
    ========================================================================== */
 
 /**
- * The flag object is a design pattern similar to the media object witch place
- * any image- and text-like content side-by-side however it give us control over
- * the vertical alignments of the text and image.
- *
- * http://csswizardry.com/2013/05/the-flag-object/
+ * Place any image- and text-like content side-by-side, as per:
+ * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
  */
 
-.o-flag {
+.o-media {
   display: flex;
 }
 
-  .o-flag__img {
+  .o-media__img {
     margin-right: $inuit-global-spacing-unit;
   }
 
-  .o-flag__body {
+  .o-media__body {
     flex: 1 1 0%;
 
     &,
@@ -35,11 +32,11 @@
 /* Vertical alignment modifiers.
    ========================================================================== */
 
-.o-flag--middle {
+.o-media--middle {
   align-items: center;
 }
 
-.o-flag--bottom {
+.o-media--bottom {
   align-items: flex-end;
 }
 
@@ -50,9 +47,9 @@
 /* Reversed media objects
    ========================================================================== */
 
-.o-flag--reverse {
+.o-media--reverse {
 
-  > .o-flag__img {
+  > .o-media__img {
     order: 1;
     margin-right: 0;
     margin-left: $inuit-global-spacing-unit;
@@ -72,9 +69,9 @@
  * reversible options for all available sizes.
  */
 
-.o-flag--flush {
+.o-media--flush {
 
-  > .o-flag__img {
+  > .o-media__img {
     margin-right: 0;
     margin-left: 0;
  }
@@ -82,15 +79,15 @@
 }
 
 
-.o-flag--tiny {
+.o-media--tiny {
 
-  > .o-flag__img {
+  > .o-media__img {
     margin-right: $inuit-global-spacing-unit-tiny;
   }
 
-  &.o-flag--reverse {
+  &.o-media--reverse {
 
-    > .o-flag__img {
+    > .o-media__img {
       margin-right: 0;
       margin-left: $inuit-global-spacing-unit-tiny;
     }
@@ -100,15 +97,15 @@
 }
 
 
-.o-flag--small {
+.o-media--small {
 
-  > .o-flag__img {
+  > .o-media__img {
     margin-right: $inuit-global-spacing-unit-small;
   }
 
-  &.o-flag--reverse {
+  &.o-media--reverse {
 
-    > .o-flag__img {
+    > .o-media__img {
       margin-right: 0;
       margin-left: $inuit-global-spacing-unit-small;
     }
@@ -118,15 +115,15 @@
 }
 
 
-.o-flag--large {
+.o-media--large {
 
-  > .o-flag__img {
+  > .o-media__img {
     margin-right: $inuit-global-spacing-unit-large;
   }
 
-  &.o-flag--reverse {
+  &.o-media--reverse {
 
-    > .o-flag__img {
+    > .o-media__img {
       margin-right: 0;
       margin-left: $inuit-global-spacing-unit-large;
     }
@@ -136,15 +133,15 @@
 }
 
 
-.o-flag--huge {
+.o-media--huge {
 
-  > .o-flag__img {
+  > .o-media__img {
     margin-right: $inuit-global-spacing-unit-huge;
   }
 
-  &.o-flag--reverse {
+  &.o-media--reverse {
 
-    > .o-flag__img {
+    > .o-media__img {
       margin-right: 0;
       margin-left: $inuit-global-spacing-unit-huge;
     }
